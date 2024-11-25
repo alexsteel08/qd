@@ -1,0 +1,101 @@
+.footer {
+    background: #424201;
+    color: white;
+    padding: 127px 0;
+}
+.footer_block {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.footer_copyright {
+    text-align: center;
+    padding: 26px 0;
+}
+.footer_left {
+    flex: 0 0 33.333%;
+}
+.footer_right {
+    flex: 0 0 33.333%;
+}
+.footer_center {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 33.333%;
+}
+.footer_center_col ul li {
+    margin-bottom: 18px;
+}
+.footer_center_col ul li a {
+    color: #FFF;
+    text-align: center;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(90deg, #924E1F 0.01%, #FFE09D 56%, #CF9C51 100%), #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.footer_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.footer_right span,
+.footer_right a {
+    text-align: center;
+    font-family: "Futura PT";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: linear-gradient(90deg, #924E1F 0.01%, #FFE09D 56%, #CF9C51 100%), #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.footer_social a {
+    padding: 0 10px;
+}
+.footer_center .footer_center_col ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    grid-column-gap: 100px;
+}
+@media only screen and (max-width: 600px) {
+    .footer_content,
+    .footer_center {
+        flex-direction: column;
+    }
+    .footer_center {
+        text-align: center;
+    }
+    .footer_left,
+    .footer_center {
+        margin-bottom: 20px;
+    }
+    .footer_center .footer_center_col ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+    }
+}

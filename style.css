@@ -1,0 +1,1353 @@
+/*
+  Theme Name: QD
+  Author: default
+  Author URI: https://site.com
+  Text Domain: volunteer
+  Theme URI: https://site.com
+  Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community. Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.
+  Requires at least: 6.1
+  Tested up to: 6.2
+  Requires PHP: 5.6
+  Version: 1.0
+  License: GNU General Public License v2 or later
+  License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/wp-content/themes/qd/assets/font/FuturaPT-Medium.eot');
+    src: local('/assets/font/Futura PT Medium'), local('/wp-content/themes/qd/assets/font/FuturaPT-Medium'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Medium.woff') format('woff'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('/wp-content/themes/qd/assets/font/FuturaPT-Light.eot');
+    src: local('/wp-content/themes/qd/assets/font/Futura PT Light'), local('/wp-content/themes/qd/assets/font/FuturaPT-Light'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Light.eot?#iefix') format('embedded-opentype'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Light.woff') format('woff'),
+    url('/wp-content/themes/qd/assets/font/FuturaPT-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+body.logged-in .header {
+    margin-top: 28px;
+}
+input {
+    outline: none;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.main {
+    height: 100%;
+    padding-top: 180px;
+}
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        padding-top: 130px;
+    }
+}
+
+/*modal*/
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    top: 15px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+.modal-bg {
+    position: absolute;
+    background: rgb(0 0 0 / 60%);
+    width: 100%;
+    height: 100%;
+}
+.modal-container {
+    border-radius: 10px;
+    position: relative;
+    max-width: 340px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal-container video {
+    height: 500px;
+    width: auto;
+}
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    outline: none;
+    appearance: none;
+    color: red;
+    background: none;
+    border: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*modal end*/
+
+.size_table_head,
+.size_table_product {
+    display: flex;
+}
+.size_table_item {
+    flex: 1;
+    padding: 5px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+.size_table_product:hover {
+    background-color: #424201;
+    cursor: pointer;
+}
+.size_table_product:hover .size_table_item {
+    color: #FFFFFF;
+}
+.size_table {
+    background-color: #FFFFFF;
+    font-size: 16px;
+}
+/*111222*/
+
+
+
+
+/*product*/
+.product_block {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.product_top,
+.product_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.product_top_left,
+.product_top_right {
+    flex: 0 0 50%;
+    padding: 0 10px;
+}
+.product_top_left {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product_main_img img {
+    max-width: 650px;
+}
+.product_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 104%;
+    max-width: 680px;
+    margin-bottom: 60px;
+    margin-top: 88px;
+}
+.product_description {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+.product_title span:nth-child(1),
+.product_title span:nth-child(3) {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.product_title span:nth-child(2) {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+.product_top_left_image img {
+    max-width: 500px;
+}
+.product_top_btn {
+    margin-bottom: 20px;
+}
+.product_top_btn a {
+    display: flex;
+    width: 501px;
+    padding: 21px 0px 24px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.product_bottom_right {
+    width: 100%;
+    padding: 10px;
+}
+.product_bottom_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.product_bottom_subtitle {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.product_bottom_text {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.product_bottom_price {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.product_bottom_char {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 23px;
+}
+.product_bottom_char_left {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.product_bottom_char_right {
+    flex: 0 0 50%;
+}
+.product_char_items {
+    display: flex;
+    margin-bottom: 10px;
+}
+.product_char_items_line {
+    display: block;
+}
+.product_char_name,
+.product_char_value {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.product_bottom_left,
+.product_bottom_right {
+    flex: 0 0 50%;
+}
+.product_bottom_left {
+    padding: 10px;
+}
+.price_regular {
+    text-decoration: line-through;
+    margin-right: 20px;
+}
+.product_bottom_modal_btn a {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: underline;
+}
+section.product {
+    display: block;
+}
+section.product_mobile {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    section.product {
+        display: none;
+    }
+    section.product_mobile {
+        display: block;
+    }
+    .product_top, .product_bottom {
+        flex-direction: column;
+    }
+    .product_title {
+        font-size: 45px;
+        margin-top: 50px;
+    }
+    .product_top_left_image img {
+        max-width: 500px;
+        width: 100%;
+    }
+    .product_top_btn a {
+        max-width: 501px;
+        width: 100%;
+    }
+    .product_main_img img {
+        max-width: 650px;
+        width: 100%;
+    }
+    .product_bottom_img img {
+        width: 100%;
+    }
+    .product_bottom_right_image img {
+        width: 100%;
+    }
+    .product_bottom_title {
+        font-size: 45px;
+    }
+
+
+    .product_mobile_title {
+        padding: 20px 16px;
+    }
+    .product_mobile_title h1 {
+        color: #424201;
+        text-align: center;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .product_mobile_img img {
+        max-height: 500px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .product_mobile .product_top_btn {
+        padding: 16px;
+    }
+    .product_mobile .product_mobile_char {
+        text-align: center;
+        padding: 0 16px;
+    }
+    .product_mobile .product_mobile_char img {
+        width: 100%;
+    }
+    .product_mobile .product_char_items {
+        justify-content: center;
+        text-align: center;
+    }
+    .product_mobile .product_char_list {
+        padding: 20px 0;
+    }
+    .product_mobile .product_top_btn_last {
+        padding: 20px 0;
+    }
+}
+
+/*product end*/
+
+
+/*slider*/
+.slider {
+    padding: 60px 10px;
+}
+.slider_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.swiper-slide img {
+    width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .slider_title {
+        color: #424201;
+        text-align: center;
+        font-family: "Microsoft Sans Serif";
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: none;
+    }
+}
+/*slider end*/
+
+
+/*feautures*/
+
+.feautures_content {
+    display: flex;
+    justify-content: space-between;
+}
+.feautures_image {
+    flex: 0 0 55%;
+    text-align: right;
+    position: relative;
+}
+.feautures_hello {
+    position: absolute;
+    top: 170px;
+    left: 40px;
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.feautures_hello br {
+    display: none;
+}
+.feautures_image img {
+    max-height: 700px;
+}
+.feautures_text_block {
+    flex: 0 0 45%;
+}
+.feautures_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+.feautures_text {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+.feautures_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.feautures_item img {
+    margin-right: 15px;
+
+}
+.feautures_item span {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 600px) {
+    .feautures_block {
+        padding: 0 20px;
+    }
+
+    .feautures_content {
+        flex-direction: column;
+    }
+    .feautures_image img {
+        width: 100%;
+    }
+    .feautures_title {
+        color: #424201;
+        font-family: "Microsoft Sans Serif";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        padding: 20px 0 0 0;
+    }
+    .feautures_text {
+        color: #424201;
+        text-align: center;
+        font-family: "Futura PT";
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .feautures_hello br {
+        display: block;
+    }
+    .feautures_hello {
+        top: -16px;
+        left: inherit;
+        right: 0;
+        font-size: 25px;
+        width: 120px;
+        text-align: left;
+    }
+    .feautures_item span {
+         color: #424201;
+         font-family: "Futura PT";
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+    }
+}
+/*feautures_end*/
+
+
+/*special_gift*/
+
+.special_gift {
+    padding: 34px 0;
+}
+.special_gift_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.special_gift_box {
+    display: flex;
+    justify-content: space-between;
+}
+.special_gift_img {
+    flex: 0 0 55%;
+    padding: 0 60px 0 0;
+}
+.special_gift_descr {
+}
+.special_gift_text {
+    height: 255px;
+    overflow: hidden;
+}
+.special_gift_text.full {
+    height: auto;
+    overflow: hidden;
+}
+.special_gift_text p {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 13px;
+}
+.special_gift_img {
+    width: 100%;
+    object-fit: contain;
+}
+.special_gift_button {
+    margin: 20px 0;
+    cursor: pointer;
+}
+.special_gift_button a {
+    display: inline-flex;
+    width: 100%;
+    padding: 20px 135px 25px 135px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.special_gift_miniumg img {
+    max-width: 335px;
+}
+@media only screen and (max-width: 600px) {
+    .special_gift_block {
+        padding: 0 20px;
+    }
+    .special_gift_img img {
+        width: 100%;
+    }
+    .special_gift_img {
+        padding: 0 0 0 0;
+    }
+    .special_gift_title {
+        color: #424201;
+        text-align: center;
+        font-family: "Microsoft Sans Serif";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .special_gift_box {
+        flex-direction: column;
+    }
+    .special_gift_text p {
+        color: #424201;
+        font-family: "Futura PT";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .special_gift_button a {
+        padding: 20px 0px 25px 0px;
+        color: #FFF;
+        font-family: "Futura PT";
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+/*special_gift end*/
+
+
+/*payment_and_delivery*/
+.payment_and_delivery {
+    padding: 30px 0;
+}
+.payment_and_delivery_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.payment_and_delivery_subtitle {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    text-align: center;
+    padding: 10px 0;
+}
+.pad_circle_btn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.pad_circle_btn:before {
+    position: absolute;
+    content: '';
+    top: 30px;
+    left: 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 112px;
+    height: 112px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='114' height='114' viewBox='0 0 114 114' fill='none'%3E%3Cg clip-path='url(%23clip0_51_1886)'%3E%3Cpath d='M1.60581 75.7495C2.63845 72.2092 5.3251 69.428 8.65482 68.4077C11.2009 67.6198 14.6416 67.954 16.9167 69.2055C17.4688 69.5022 19.7346 71.4758 21.9373 73.6036C26.4085 77.8581 26.1223 77.7537 26.3171 75.1031C26.6223 71.2472 27.9718 64.5291 29.4415 59.6904C33.3319 46.8243 40.0277 35.5067 49.5058 25.6725C56.2765 18.6855 63.3181 13.4441 71.7758 9.11902C82.7275 3.52554 95.2297 0.289961 106.625 0.0927421C110.059 0.0333115 110.719 0.240673 111.573 1.58233C112.001 2.25317 112.03 2.69022 112.165 10.5203C112.307 18.7003 112.308 18.7441 111.817 19.4745C110.922 20.8684 110.335 21.0536 106.161 21.3227C95.8028 22.027 86.3578 24.9253 77.7176 30.085C67.5616 36.146 58.9289 45.528 53.6446 56.2305C50.4955 62.6297 48.8585 67.9088 47.5753 75.9384C47.4558 76.6187 47.7364 76.3951 51.1757 72.8569C54.4434 69.5186 55.1116 68.9382 56.5215 68.2356C61.5545 65.7638 67.5784 67.4535 70.3722 72.1309C72.2881 75.3794 72.3193 79.7108 70.4069 82.9819C69.4296 84.6616 44.0024 110.94 42.465 111.863C41.8586 112.224 40.8168 112.702 40.1421 112.91C38.6624 113.373 35.6445 113.447 34.2813 113.055C31.5548 112.271 31.5548 112.271 17.048 98.2794C2.56269 84.2655 2.56269 84.2655 1.68463 81.5678C1.29123 80.3275 1.23294 76.9593 1.60581 75.7495ZM8.81094 79.9567C9.17263 80.6287 34.8057 105.433 35.5343 105.814C36.3066 106.194 37.7501 106.169 38.5088 105.762C38.8339 105.582 44.7679 99.5499 51.7098 92.3412C61.4247 82.2841 64.3885 79.0823 64.5536 78.5106C64.9846 76.8623 63.6567 74.7193 62.0098 74.3759C60.2314 74.0129 60.0806 74.1468 52.5787 81.8684C48.7311 85.8293 45.3106 89.1921 44.9844 89.3071C43.3765 89.9476 41.4201 89.4126 40.4784 88.0943C40.0292 87.4239 39.9805 87.1403 39.9272 84.0564C39.6209 66.3621 46.7741 48.6045 59.5407 35.3659C69.6851 24.8419 82.7341 17.8119 97.0403 15.1577C99.3301 14.7243 103.718 14.1452 104.833 14.1259C105.183 14.1198 105.221 13.8128 105.168 10.707L105.109 7.29506L103.186 7.4596C87.4375 8.93547 72.9271 14.9625 60.8059 25.0394C49.6127 34.3782 41.2732 46.7962 36.6407 61.0317C34.5434 67.5221 33.0239 77.0654 33.1318 83.2989C33.1526 84.5018 33.0671 85.8816 32.9657 86.3428C32.643 87.9236 31.4816 89.0814 30.0196 89.3036C28.1866 89.576 27.9207 89.3837 20.4235 82.2061C14.7723 76.7687 13.2616 75.4384 12.5805 75.2752C11.1961 74.9272 9.71984 75.5872 8.9548 76.8913C8.48725 77.687 8.42626 79.2195 8.81094 79.9567Z' fill='%23424201'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_51_1886'%3E%3Crect width='112' height='112' fill='white' transform='matrix(0.0173047 0.99985 0.99985 -0.0173047 0 1.93848)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+
+}
+.pad_circle_btn:after {
+    position: absolute;
+    content: '';
+    top: 30px;
+    right: 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 112px;
+    height: 112px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112' fill='none'%3E%3Cg clip-path='url(%23clip0_51_1880)'%3E%3Cpath d='M111.672 73.8281C110.578 70.3063 107.844 67.5719 104.497 66.6094C101.938 65.8656 98.5031 66.2594 96.25 67.55C95.7031 67.8563 93.4719 69.8688 91.3063 72.0344C86.9094 76.3656 87.1937 76.2563 86.9531 73.6094C86.5812 69.7594 85.1156 63.0656 83.5625 58.2531C79.45 45.4563 72.5594 34.2563 62.9125 24.5875C56.0219 17.7188 48.8906 12.6 40.3594 8.42188C29.3125 3.01875 16.7563 0 5.35938 0C1.925 0 1.26875 0.21875 0.4375 1.575C0.021875 2.25313 0 2.69063 0 10.5219C0 18.7031 0 18.7469 0.503125 19.4688C1.42188 20.8469 2.0125 21.0219 6.19062 21.2188C16.5594 21.7438 26.0531 24.4781 34.7813 29.4875C45.0406 35.3719 53.8344 44.6031 59.3031 55.2125C62.5625 61.5563 64.2906 66.8063 65.7125 74.8125C65.8438 75.4906 65.5594 75.2719 62.0594 71.7938C58.7344 68.5125 58.0562 67.9438 56.6344 67.2656C51.5594 64.8813 45.5656 66.675 42.8531 71.4C40.9937 74.6813 41.0375 79.0125 43.0062 82.25C44.0125 83.9125 69.8906 109.747 71.4437 110.644C72.0563 110.994 73.1062 111.453 73.7844 111.65C75.2719 112.088 78.2906 112.109 79.6469 111.694C82.3594 110.863 82.3594 110.863 96.6219 96.6219C110.862 82.3594 110.862 82.3594 111.694 79.6469C112.066 78.4 112.066 75.0313 111.672 73.8281ZM104.541 78.1594C104.191 78.8375 78.9906 104.081 78.2687 104.475C77.5031 104.869 76.0594 104.869 75.2937 104.475C74.9656 104.3 68.9281 98.3719 61.8625 91.2844C51.975 81.3969 48.9562 78.2469 48.7813 77.6781C48.3219 76.0375 49.6125 73.8719 51.2531 73.5C53.025 73.1063 53.1781 73.2375 60.8125 80.8281C64.7281 84.7219 68.2062 88.025 68.5344 88.1344C70.1531 88.7469 72.1 88.1781 73.0187 86.8438C73.4562 86.1656 73.5 85.8813 73.5 82.7969C73.5 65.1 66.0406 47.4688 53.0469 34.4531C42.7219 24.1063 29.5531 17.3031 15.2031 14.8969C12.9063 14.5031 8.50937 14 7.39375 14C7.04375 14 7 13.6938 7 10.5875L7 7.175L8.925 7.30625C24.6969 8.50938 39.3094 14.2844 51.6031 24.15C62.9562 33.2938 71.5094 45.5656 76.3875 59.7188C78.5969 66.1719 80.2813 75.6875 80.2813 81.9219C80.2813 83.125 80.3906 84.5031 80.5 84.9625C80.85 86.5375 82.0313 87.675 83.4969 87.8719C85.3344 88.1125 85.5969 87.9156 92.9688 80.6094C98.525 75.075 100.012 73.7188 100.691 73.5438C102.069 73.1719 103.556 73.8063 104.344 75.0969C104.825 75.8844 104.912 77.4156 104.541 78.1594Z' fill='%23424201'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_51_1880'%3E%3Crect width='112' height='112' fill='white' transform='matrix(0 1 -1 0 112 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.pad_circle_btn a {
+    display: flex;
+    max-width: 501px;
+    padding: 18px 0px 18px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 100%;
+}
+.pad_circle_steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 70px 150px;
+}
+.pad_circle_step_pay,
+.pad_circle_step_delivery {
+    text-align: center;
+    position: relative;
+}
+.pad_circle_step_pay:before {
+    position: absolute;
+    content: '';
+    right: -30px;
+    bottom: -120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 112px;
+    height: 112px;
+    transform: rotate(-89.008deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='114' height='114' viewBox='0 0 114 114' fill='none'%3E%3Cg clip-path='url(%23clip0_51_1886)'%3E%3Cpath d='M1.60581 75.7495C2.63845 72.2092 5.3251 69.428 8.65482 68.4077C11.2009 67.6198 14.6416 67.954 16.9167 69.2055C17.4688 69.5022 19.7346 71.4758 21.9373 73.6036C26.4085 77.8581 26.1223 77.7537 26.3171 75.1031C26.6223 71.2472 27.9718 64.5291 29.4415 59.6904C33.3319 46.8243 40.0277 35.5067 49.5058 25.6725C56.2765 18.6855 63.3181 13.4441 71.7758 9.11902C82.7275 3.52554 95.2297 0.289961 106.625 0.0927421C110.059 0.0333115 110.719 0.240673 111.573 1.58233C112.001 2.25317 112.03 2.69022 112.165 10.5203C112.307 18.7003 112.308 18.7441 111.817 19.4745C110.922 20.8684 110.335 21.0536 106.161 21.3227C95.8028 22.027 86.3578 24.9253 77.7176 30.085C67.5616 36.146 58.9289 45.528 53.6446 56.2305C50.4955 62.6297 48.8585 67.9088 47.5753 75.9384C47.4558 76.6187 47.7364 76.3951 51.1757 72.8569C54.4434 69.5186 55.1116 68.9382 56.5215 68.2356C61.5545 65.7638 67.5784 67.4535 70.3722 72.1309C72.2881 75.3794 72.3193 79.7108 70.4069 82.9819C69.4296 84.6616 44.0024 110.94 42.465 111.863C41.8586 112.224 40.8168 112.702 40.1421 112.91C38.6624 113.373 35.6445 113.447 34.2813 113.055C31.5548 112.271 31.5548 112.271 17.048 98.2794C2.56269 84.2655 2.56269 84.2655 1.68463 81.5678C1.29123 80.3275 1.23294 76.9593 1.60581 75.7495ZM8.81094 79.9567C9.17263 80.6287 34.8057 105.433 35.5343 105.814C36.3066 106.194 37.7501 106.169 38.5088 105.762C38.8339 105.582 44.7679 99.5499 51.7098 92.3412C61.4247 82.2841 64.3885 79.0823 64.5536 78.5106C64.9846 76.8623 63.6567 74.7193 62.0098 74.3759C60.2314 74.0129 60.0806 74.1468 52.5787 81.8684C48.7311 85.8293 45.3106 89.1921 44.9844 89.3071C43.3765 89.9476 41.4201 89.4126 40.4784 88.0943C40.0292 87.4239 39.9805 87.1403 39.9272 84.0564C39.6209 66.3621 46.7741 48.6045 59.5407 35.3659C69.6851 24.8419 82.7341 17.8119 97.0403 15.1577C99.3301 14.7243 103.718 14.1452 104.833 14.1259C105.183 14.1198 105.221 13.8128 105.168 10.707L105.109 7.29506L103.186 7.4596C87.4375 8.93547 72.9271 14.9625 60.8059 25.0394C49.6127 34.3782 41.2732 46.7962 36.6407 61.0317C34.5434 67.5221 33.0239 77.0654 33.1318 83.2989C33.1526 84.5018 33.0671 85.8816 32.9657 86.3428C32.643 87.9236 31.4816 89.0814 30.0196 89.3036C28.1866 89.576 27.9207 89.3837 20.4235 82.2061C14.7723 76.7687 13.2616 75.4384 12.5805 75.2752C11.1961 74.9272 9.71984 75.5872 8.9548 76.8913C8.48725 77.687 8.42626 79.2195 8.81094 79.9567Z' fill='%23424201'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_51_1886'%3E%3Crect width='112' height='112' fill='white' transform='matrix(0.0173047 0.99985 0.99985 -0.0173047 0 1.93848)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.pad_circle_step_delivery:after {
+    position: absolute;
+    content: '';
+    left: -30px;
+    bottom: -120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 112px;
+    height: 112px;
+    transform: rotate(90deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112' fill='none'%3E%3Cg clip-path='url(%23clip0_51_1880)'%3E%3Cpath d='M111.672 73.8281C110.578 70.3063 107.844 67.5719 104.497 66.6094C101.938 65.8656 98.5031 66.2594 96.25 67.55C95.7031 67.8563 93.4719 69.8688 91.3063 72.0344C86.9094 76.3656 87.1937 76.2563 86.9531 73.6094C86.5812 69.7594 85.1156 63.0656 83.5625 58.2531C79.45 45.4563 72.5594 34.2563 62.9125 24.5875C56.0219 17.7188 48.8906 12.6 40.3594 8.42188C29.3125 3.01875 16.7563 0 5.35938 0C1.925 0 1.26875 0.21875 0.4375 1.575C0.021875 2.25313 0 2.69063 0 10.5219C0 18.7031 0 18.7469 0.503125 19.4688C1.42188 20.8469 2.0125 21.0219 6.19062 21.2188C16.5594 21.7438 26.0531 24.4781 34.7813 29.4875C45.0406 35.3719 53.8344 44.6031 59.3031 55.2125C62.5625 61.5563 64.2906 66.8063 65.7125 74.8125C65.8438 75.4906 65.5594 75.2719 62.0594 71.7938C58.7344 68.5125 58.0562 67.9438 56.6344 67.2656C51.5594 64.8813 45.5656 66.675 42.8531 71.4C40.9937 74.6813 41.0375 79.0125 43.0062 82.25C44.0125 83.9125 69.8906 109.747 71.4437 110.644C72.0563 110.994 73.1062 111.453 73.7844 111.65C75.2719 112.088 78.2906 112.109 79.6469 111.694C82.3594 110.863 82.3594 110.863 96.6219 96.6219C110.862 82.3594 110.862 82.3594 111.694 79.6469C112.066 78.4 112.066 75.0313 111.672 73.8281ZM104.541 78.1594C104.191 78.8375 78.9906 104.081 78.2687 104.475C77.5031 104.869 76.0594 104.869 75.2937 104.475C74.9656 104.3 68.9281 98.3719 61.8625 91.2844C51.975 81.3969 48.9562 78.2469 48.7813 77.6781C48.3219 76.0375 49.6125 73.8719 51.2531 73.5C53.025 73.1063 53.1781 73.2375 60.8125 80.8281C64.7281 84.7219 68.2062 88.025 68.5344 88.1344C70.1531 88.7469 72.1 88.1781 73.0187 86.8438C73.4562 86.1656 73.5 85.8813 73.5 82.7969C73.5 65.1 66.0406 47.4688 53.0469 34.4531C42.7219 24.1063 29.5531 17.3031 15.2031 14.8969C12.9063 14.5031 8.50937 14 7.39375 14C7.04375 14 7 13.6938 7 10.5875L7 7.175L8.925 7.30625C24.6969 8.50938 39.3094 14.2844 51.6031 24.15C62.9562 33.2938 71.5094 45.5656 76.3875 59.7188C78.5969 66.1719 80.2813 75.6875 80.2813 81.9219C80.2813 83.125 80.3906 84.5031 80.5 84.9625C80.85 86.5375 82.0313 87.675 83.4969 87.8719C85.3344 88.1125 85.5969 87.9156 92.9688 80.6094C98.525 75.075 100.012 73.7188 100.691 73.5438C102.069 73.1719 103.556 73.8063 104.344 75.0969C104.825 75.8844 104.912 77.4156 104.541 78.1594Z' fill='%23424201'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_51_1880'%3E%3Crect width='112' height='112' fill='white' transform='matrix(0 1 -1 0 112 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.pad_circle_step_text {
+    color: #424201;
+    text-align: center;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.pad_circle_bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+@media only screen and (max-width: 600px) {
+    .pad_circle_steps {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .pad_circle_step_delivery:after,
+    .pad_circle_step_pay:before,
+    .pad_circle_btn:before,
+    .pad_circle_btn:after {
+        display: none;
+    }
+    .pad_circle_bottom {
+        margin-top: 0px;
+    }
+    .pad_circle {
+        padding: 0 16px;
+    }
+}
+/*payment_and_delivery_end*/
+
+
+/*guarantees*/
+.guarantees {
+    padding: 30px 0;
+}
+.guarantees_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.guarantees_text {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    padding: 10px 0;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.guarantees_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.guarantees_item {
+    display: flex;
+    align-items: center;
+    flex: 0 0 33.333%;
+    flex-direction: column;
+}
+.guarantees_item video {
+    width: 275px;
+}
+.guarantees_item img {
+    margin-right: 10px;
+}
+.guarantees_item span {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin-top: 10px;
+}
+.guarantees_item video {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    height: 370px;
+}
+
+/* Приховати controls */
+.guarantees_item video::-webkit-media-controls {
+    display: none !important;
+}
+@media only screen and (max-width: 600px) {
+    .guarantees_block {
+        padding: 0 20px;
+    }
+    .guarantees_title {
+        color: #424201;
+        text-align: center;
+        font-family: "Microsoft Sans Serif";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .guarantees_list {
+        flex-direction: column;
+    }
+    .guarantees_item {
+        margin-bottom: 25px;
+    }
+    .guarantees_item img {
+        width: 165px;
+    }
+}
+/*guarantees end*/
+
+
+/*404*/
+
+.not-found {
+    padding: 100px 10px;
+}
+.nf_top_title {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+.nf_num {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 250px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+.nf_top_bottom {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.nf_button {
+    display: flex;
+    justify-content: center;
+}
+.nf_button a {
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: inline-flex;
+    padding: 20px 138px 25px 138px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+}
+
+/*404 end*/
+
+
+/*history*/
+.history {
+    position: relative;
+}
+.history_content {
+    display: flex;
+    justify-content: space-between;
+}
+.history_img {
+    padding: 0 50px 0 0;
+    flex: 0 0 40%;
+}
+.history_img img {
+    width: 100%;
+    margin-bottom: -4px;
+}
+.history_decr {
+    padding-top: 30px;
+}
+.history_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 35px;
+}
+.history_text {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+}
+.history_text p {
+    margin-bottom: 36px;
+}
+/*history end*/
+
+
+/*delivery*/
+.text_block {
+    padding: 0 0 50px 0;
+}
+.text_block_title {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 48px 10px 22px 10px;
+    text-align: center;
+}
+.text_block_text {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.text_block_text h2 {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 22px;
+}
+.text_block_text h3 {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 25px 0;
+}
+.text_block_text p {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .text_block_block {
+        padding: 0 20px;
+    }
+    .text_block_title {
+        color: #424201;
+        text-align: center;
+        font-family: "Microsoft Sans Serif";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .text_block_text h2 {
+        color: #424201;
+        font-family: "Futura PT";
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .text_block_text h3 {
+        color: #424201;
+        font-family: "Futura PT";
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .text_block_text p {
+        color: #424201;
+        font-family: "Futura PT";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+}
+/*delivery end*/
+
+
+/*woo*/
+
+.quantity {
+    display: none !important;
+}
+.single-product {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.single-product .product {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    gap: 16px;
+}
+.single-product .product .product_image {
+    flex: 1;
+}
+.single-product .product .summary.entry-summary {
+    flex: 1;
+}
+.single-product .product .product_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.single-product .product_details_char {
+    color: #424201;
+    font-family: "Microsoft Sans Serif";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.single-product .product_details_title {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+.single-product .product_details_subtitle {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+}
+.single-product .product_details_prices {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 24px;
+}
+.single-product .product_details_sale bdi,
+.single-product .product_details_regular bdi {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+}
+.single-product .product_details_regular bdi {
+    text-decoration: line-through;
+}
+.single-product .product_details_char_right {
+    display: flex;
+    gap: 140px;
+    margin-bottom: 30px;
+}
+.single-product .product_details_sku p,
+.single-product .product_details_tag,
+.single-product .product_details_tag ul li {
+    color: #424201;
+    font-family: "Futura PT";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.single-product .product_details_sku {
+    margin-bottom: 50px;
+}
+.single-product .summary.entry-summary > form > button.single_add_to_cart_button {
+    display: flex;
+    width: 301px;
+    padding: 21px 0px 24px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+}
+.single-product .summary.entry-summary > form > button.single_add_to_cart_button:hover {
+    opacity: .8;
+    transition: all 0.3s ease-in-out;
+}
+.single-product .product_bottom_modal {
+    margin-bottom: 30px;
+}
+@media only screen and (max-width: 600px) {
+    .single-product .product {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .single-product .product_details_char {
+        font-size: 45px;
+    }
+}
+
+
+
+.woocommerce-cart .content_width {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
+.woocommerce-cart .wc-block-components-button__text {
+    display: flex;
+    width: 100%;
+    padding: 21px 0px 24px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+}
+.woocommerce-cart .wc-block-components-button__text:hover {
+    opacity: .8;
+    transition: all 0.3s ease-in-out;
+}
+.woocommerce-cart-form,
+.cart-collaterals {
+    display: flex;
+    justify-content: center;
+}
+.woocommerce table.shop_table {
+    max-width: 690px;
+}
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    max-width: 690px;
+}
+.woocommerce-shipping-totals.shipping,
+.cart-subtotal {
+    display: none;
+}
+.woocommerce-cart .content_title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.cart_totals h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+    display: flex;
+    /* width: 501px; */
+    padding: 21px 0px 24px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #424201;
+    color: #FFF;
+    font-family: "Futura PT";
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+}
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button.alt:hover {
+    background: #424201;
+    color: #FFF;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+.woocommerce-checkout .content_page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.woocommerce .col2-set, .woocommerce-page .col2-set {
+    display: flex;
+    flex-direction: column;
+}
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    width: 100%;
+}
+.woocommerce-checkout form.checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 690px;
+}
+/*woo end*/
+
+
+/*gallery*/
+.gallery {
+    padding: 50px 0 100px;
+}
+
+#lightgallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+#lightgallery a {
+    flex: 0 0 calc(25% - 16px);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+#lightgallery a:hover {
+    box-shadow: rgb(0 0 0 / 26%) 0px 6px 24px;
+    transition: all 0.3s ease-in-out;
+}
+#lightgallery a img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    margin-bottom: -10px;
+}
+.lg-outer .lg-thumb {
+    display: flex;
+    justify-content: center;
+}
+/*gallery end*/
