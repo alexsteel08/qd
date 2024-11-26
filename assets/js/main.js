@@ -275,43 +275,60 @@ window.addEventListener('scroll', function () {
 jQuery(document).ready(function ($) {
     const navbarMenu = document.getElementById("menu");
     const burgerMenu = document.getElementById("burger");
+    const burgerClose = document.getElementById("burger_close"); // Отримуємо burger_close
     const headerMenu = document.getElementById("header");
+    const bodyElement = document.body; // Отримуємо body
 
-// Open Close Navbar Menu on Click Burger
+    // Open Close Navbar Menu on Click Burger
     if (burgerMenu && navbarMenu && headerMenu) {
         burgerMenu.addEventListener("click", () => {
             burgerMenu.classList.toggle("is-active");
             navbarMenu.classList.toggle("is-active");
             headerMenu.classList.toggle("is-active");
+            bodyElement.classList.toggle("_lock"); // Додаємо/видаляємо клас _lock
         });
     }
 
-// Close Navbar Menu on Click Menu Links
+    // Close Navbar Menu on Click Burger Close
+    if (burgerClose) {
+        burgerClose.addEventListener("click", () => {
+            burgerMenu.classList.remove("is-active");
+            navbarMenu.classList.remove("is-active");
+            headerMenu.classList.remove("is-active");
+            bodyElement.classList.remove("_lock"); // Видаляємо клас _lock
+        });
+    }
+
+    // Close Navbar Menu on Click Menu Links
     document.querySelectorAll(".menu-link").forEach((link) => {
         link.addEventListener("click", () => {
             burgerMenu.classList.remove("is-active");
             navbarMenu.classList.remove("is-active");
+            headerMenu.classList.remove("is-active");
+            bodyElement.classList.remove("_lock"); // Видаляємо клас _lock
         });
     });
 
-// Change Header Background on Scrolling
+    // Change Header Background on Scrolling
     window.addEventListener("scroll", () => {
-        if (this.scrollY >= 85) {
+        if (window.scrollY >= 85) {
             headerMenu.classList.add("on-scroll");
         } else {
             headerMenu.classList.remove("on-scroll");
         }
     });
 
-// Fixed Navbar Menu on Window Resize
+    // Fixed Navbar Menu on Window Resize
     window.addEventListener("resize", () => {
         if (window.innerWidth > 768) {
             if (navbarMenu.classList.contains("is-active")) {
                 navbarMenu.classList.remove("is-active");
+                burgerMenu.classList.remove("is-active");
+                headerMenu.classList.remove("is-active");
+                bodyElement.classList.remove("_lock"); // Видаляємо клас _lock при ресайзі
             }
         }
     });
-
 });
 
 
